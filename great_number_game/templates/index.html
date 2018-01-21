@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <h1>Welcome to the great number game!</h1>
+    <h2>I am thinking of a number 1 - 100, take a guess!</h2>
+    <br>
+    <br>
+    <p>True Number: {{session['num']}}</p>
+    <p>Correct: {{session['correct']}}</p>
+    {% if session['correct'] == None %}
+    <form action="/guess" method="POST">
+        <input type="text" name="guess">
+        <input type="submit" value="Submit">
+    </form>
+    {% endif %}
+    {% if session['correct'] == 'Low' %}
+        <div id="status" style="height:100px;width:100px;background-color:red;color:white;text-align:center">TO LOW!!</div>
+        <form action="/guess" method="POST">
+            <input type="text" name="guess">
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+    {% if session['correct'] == 'High' %}
+        <div id="status" style="height:100px;width:100px;background-color:red;color:white;text-align:center">TO HIGH!!</div>
+        <form action="/guess" method="POST">
+            <input type="text" name="guess">
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+    {% if session['correct'] == 'Yes' %}
+        <div id="status" style="height:100px;width:100px;background-color:green;color:white;text-align:center">YOU GOT IT!</div>
+        <form action="/replay" method="POST">
+            <input type="submit" value="Replay">
+        </form>
+    {% endif %}
+</body>
+</html>
