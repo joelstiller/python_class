@@ -1,0 +1,13 @@
+#wrapper{
+    width: 1000px;
+    margin: auto;
+}
+
+.box{
+    display: inline-block;
+    width: 230px;
+    height: 225px;
+    margin: 5px 5px 5px 0px;
+    border: 1px solid black;
+    text-align: center;
+}

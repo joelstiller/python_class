@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Ninja Gold Game!</title>
+</head>
+<body>
+<div id="wrapper">
+    <div>Your Gold: <input type="text" name="gold" readonly value="{{gold}}"></div>
+        <div class="box">
+            <h1>Farm</h1>
+            <p>(Make 10-20 gold)</p>
+            <form action="/process_money/Farm" method="POST">
+                <input type="submit" value="Make Gold!">
+            </form>
+        </div>
+        <div class="box">
+            <h1>Cave</h1>
+            <p>(Make 5-10 gold)</p>
+            <form action="/process_money/Cave" method="POST">
+                <input type="submit" value="Make Gold!">
+            </form>
+        </div>
+        <div class="box">
+            <h1>House</h1>
+            <p>(Make 2-5 golds)</p>
+            <form action="/process_money/House" method="POST">
+                <input type="submit" value="Make Gold!">
+            </form>
+        </div>
+        <div class="box">
+            <h1>Casino</h1>
+            <p>(Win/Lose 0-50 gold)</p>
+            <form action="/process_money/Casino" method="POST">
+                <input type="submit" value="Gamble!">
+            </form>
+        </div>
+    <div id="log_output">
+        Game Log:<br>
+        <textarea name="logs" id="logs" cols="133" rows="20" readonly>{% for i in session['log']|reverse %} {{ i }}{% endfor %}</textarea> 
+    </div>
+</div>
+</body>
+</html>
