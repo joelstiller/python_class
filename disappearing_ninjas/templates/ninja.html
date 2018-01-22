@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninjas!</title>
+</head>
+<body>
+    {% if arg == "everyone" %}
+        <img src="{{ url_for('static', filename='leonardo.jpg') }}">
+        <img src="{{ url_for('static', filename='michelangelo.jpg') }}">
+        <img src="{{ url_for('static', filename='donatello.jpg') }}">   
+        <img src="{{ url_for('static', filename='raphael.jpg') }}"> 
+    {% endif %}
+    {% if arg == "blue" %}
+        <img src="{{ url_for('static', filename='leonardo.jpg') }}">
+    {% endif %}
+    {% if arg == "orange" %}
+         <img src="{{ url_for('static', filename='michelangelo.jpg') }}">
+    {% endif %}
+    {% if arg == "purple" %}
+        <img src="{{ url_for('static', filename='donatello.jpg') }}">   
+    {% endif %}
+    {% if arg == "red" %}
+        <img src="{{ url_for('static', filename='raphael.jpg') }}"> 
+    {% endif %}
+    {% if arg == "error" %}
+        <img src="{{ url_for('static', filename='notapril.jpg') }}">
+    {% endif %}
+</body>
+</html>
