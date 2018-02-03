@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Advanced Validation Example</title>
+</head>
+<body>
+  <h1>Enter a Valid(Any) Email!</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action='/process' method='POST'>
+    Email:<input type="text" name="email">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+<div id="copy-toolbar-container"><span id="copy-toolbar" style="cursor: pointer; position: absolute; top: 414px; right: 35px; padding: 0px 3px; background: rgba(224, 224, 224, 0.2); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px 0px; color: rgb(187, 187, 187); border-radius: 0.5em; font-size: 0.8em;">copy</span></div>
